@@ -1,0 +1,31 @@
+<section class="upload_area">
+    <div class="col-md-12">
+		  <h1><strong>My Summer To-Do List</strong>
+        <form method = "post" action = "/upload" enctype = "multipart/form-data" class="form-horizontal" role="form">
+          <input type="text" style="width:55%; height:35px;" name="description" id='description' placeholder="Text">
+          <button type="submit" class="btn btn-success">Post</button>
+        </form>
+      </h1>
+		  
+        <div class="items">
+            {{#if lists }} 
+                {{#each lists}}             
+                  <input id="{{_id}}" type="checkbox" checked>
+			            <label for="{{_id}}">{{ text }} 
+                    {{!-- <button class="btn btn-danger" id="btn-delete" data-id="{{todo.uniqueId}}"><i class="fa fa-remove"></i>
+                    </button> --}}
+                  </label>
+                {{/each}}
+            {{else}}
+              <p>todos will show up</p>
+            {{/if}}
+            <h2 class="done" aria-hidden="true">Done</h2>
+            <h2 class="undone" aria-hidden="true">Not Done</h2>
+		    </div>
+    </div>
+</section>
+
+
+    
+
+
